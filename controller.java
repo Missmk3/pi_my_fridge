@@ -1,9 +1,9 @@
-package pmf.controller;
+package src.main.java.pmf.controller;
 import pmf.model.*;
 public class controller {
-	private model model;
-	private Port Port;
-	public controller(model model) {
+	private pmf.model.model model;
+	private pmf.controller.Port Port;
+	public controller(pmf.model.model model) {
 		this.model=model;
 	}
 	public void updateDatafromArduino(double T_int,double T_ext,double H_int,double Rosee,double Csg) {

@@ -6,11 +6,15 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+
+import pmf.controller.controller;
 import pmf.model.*;
 import pmf.controller.*;
+import pmf.model.model;
+
 public class logview extends JFrame implements Observer{
-	private model model;
-	private controller controller;
+	private pmf.model.model model;
+	private pmf.controller.controller controller;
 	private JLabel T_IntLabel;
 	private JLabel T_ExtLabel;
 	private JLabel H_IntLabel;
@@ -20,7 +24,7 @@ public class logview extends JFrame implements Observer{
 	private JButton CsgButton;
 	private JComboBox<String> portComboBox;
 	private JButton connectButton;
-	public logview(model model,controller controller) {
+	public logview(pmf.model.model model, pmf.controller.controller controller) {
 		this.model=model;
 		this.controller=controller;
 		model.addObserver(this);

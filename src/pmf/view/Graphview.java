@@ -20,7 +20,7 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-public class Graphview extends JFrame implements Observer {
+public class Graphview<JFreeChart, ChartPanel, NumberAxis> extends JFrame implements Observer {
 	private model model;
 	private XYSeries Temperature_InterieureSeries;
 	private XYSeries Humidite_InterieureSeries;

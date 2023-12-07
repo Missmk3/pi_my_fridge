@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 public class Port {
-	private controller controller;
-	public Port(controller controller) {
+	private pmf.controller.controller controller;
+	public Port(pmf.controller.controller controller) {
 		this.controller=controller;
 		new ObjectMapper();
 		new ArrayList<>();
 	}
 	public List<String> getAvailablePorts() {
         List<String> portNames = new ArrayList<>();
+        Object CommPortIdentifier = null;
         Enumeration<?> portList = CommPortIdentifier.getPortIdentifiers();
         while (portList.hasMoreElements()) {
             CommPortIdentifier portId = (CommPortIdentifier) portList.nextElement();
@@ -34,7 +35,7 @@ public class Port {
                 CommPort commPort = portIdentifier.open(this.getClass().getName(), 2000);
                 if (commPort instanceof SerialPort) {
                 	SerialPort serialPort = (SerialPort) commPort;
-                	serialPort.addEventListener(new SerialEventListener(serialPort));
+                	serialPort.addEventListener(new pmf.controller.SerialEventListener(serialPort));
                 	serialPort.notifyOnDataAvailable(true);
                 	serialPort.setSerialPortParams(
                             9600,
